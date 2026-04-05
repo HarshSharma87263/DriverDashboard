@@ -1,0 +1,114 @@
+/* ─── Reset & Base ──────────────────────────────────────────────────────────── */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --font-sans: 'DM Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'DM Mono', monospace;
+
+  /* Brand */
+  --brand-green: #1D9E75;
+  --brand-green-light: #EAF3DE;
+  --brand-green-dark: #0F6E56;
+  --brand-red: #E24B4A;
+  --brand-blue: #378ADD;
+  --brand-amber: #EF9F27;
+
+  /* Sidebar */
+  --sidebar-bg: #111827;
+  --sidebar-text: rgba(255,255,255,0.55);
+  --sidebar-text-active: #ffffff;
+  --sidebar-border: rgba(255,255,255,0.07);
+  --sidebar-hover: rgba(255,255,255,0.04);
+  --sidebar-active-bg: rgba(255,255,255,0.07);
+  --sidebar-accent: var(--brand-green);
+
+  /* Surface */
+  --bg-page: #f5f6f8;
+  --bg-card: #ffffff;
+  --bg-muted: #f1f2f5;
+  --border: rgba(0,0,0,0.08);
+  --border-strong: rgba(0,0,0,0.14);
+
+  /* Text */
+  --text-primary: #111827;
+  --text-secondary: #6B7280;
+  --text-tertiary: #9CA3AF;
+
+  /* Status */
+  --status-new-bg: #FDF2F8;
+  --status-new-text: #9D174D;
+  --status-pickup-bg: #FFFBEB;
+  --status-pickup-text: #92400E;
+  --status-transit-bg: #EFF6FF;
+  --status-transit-text: #1D4ED8;
+  --status-delivered-bg: #ECFDF5;
+  --status-delivered-text: #065F46;
+  --status-cancelled-bg: #FEF2F2;
+  --status-cancelled-text: #991B1B;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.05), 0 2px 4px rgba(0,0,0,0.04);
+
+  /* Layout */
+  --sidebar-width: 256px;
+  --topbar-height: 56px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+}
+
+html, body, #root {
+  height: 100%;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--text-primary);
+  background: var(--bg-page);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  font-family: var(--font-sans);
+  cursor: pointer;
+}
+
+/* ─── Status Pills ───────────────────────────────────────────────────────────── */
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  font-size: 10px;
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: 20px;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+}
+
+.status-new    { background: var(--status-new-bg);       color: var(--status-new-text); }
+.status-accepted { background: var(--status-transit-bg); color: var(--status-transit-text); }
+.status-pickup { background: var(--status-pickup-bg);    color: var(--status-pickup-text); }
+.status-transit { background: var(--status-transit-bg);  color: var(--status-transit-text); }
+.status-delivered { background: var(--status-delivered-bg); color: var(--status-delivered-text); }
+.status-cancelled { background: var(--status-cancelled-bg); color: var(--status-cancelled-text); }
+
+/* ─── Notification Colors ───────────────────────────────────────────────────── */
+
+.notif-blue   { background: #EFF6FF; }
+.notif-amber  { background: #FFFBEB; }
+.notif-green  { background: #ECFDF5; }
+.notif-purple { background: #F5F3FF; }
+.notif-red    { background: #FEF2F2; }
+
+/* ─── Scrollbar ─────────────────────────────────────────────────────────────── */
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 2px; }
